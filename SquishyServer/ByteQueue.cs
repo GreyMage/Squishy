@@ -22,12 +22,17 @@ namespace Squishy
 
         public void Enqueue(byte[] b)
         {
-            while (back + b.Length > array.Length)
+            Enqueue(b, b.Length);
+        }
+
+        public void Enqueue(byte[] b, int len)
+        {
+            while (back + len > array.Length)
             {
-                flush(array.Length + b.Length);
+                flush(array.Length + len);
             }
-            Array.Copy(b, 0, array, back, b.Length);
-            back = back + b.Length;
+            Array.Copy(b, 0, array, back, len);
+            back = back + len;
             checkResize();
         }
 

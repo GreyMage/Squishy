@@ -27,10 +27,8 @@ namespace Squishy
 
             if (bytesRead > 0)
             {
-                byte[] tb = new byte[bytesRead];
-                Array.Copy(state.buffer,tb,bytesRead);
-                state.data.Enqueue(tb);
-                if (Encoding.ASCII.GetString(tb, 0, bytesRead).IndexOf("FLUSH") > -1)
+                state.data.Enqueue(state.buffer, bytesRead);
+                if (Encoding.ASCII.GetString(state.buffer, 0, bytesRead).IndexOf("FLUSH") > -1)
                 {
                     byte[] flushed = state.data.Dequeue(state.data.Count);
                     Console.Write(Encoding.ASCII.GetString(flushed, 0, flushed.Length));
