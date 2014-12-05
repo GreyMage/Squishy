@@ -40,9 +40,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ByteQueue.cs" />
+    <Compile Include="SquishyClient.cs" />
     <Compile Include="SquishyPeer.cs" />
     <Compile Include="SquishyServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SquishyState.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -34,7 +34,7 @@ namespace Squishy
         }
 
         // Methods
-        public void startListen()
+        public async Task startListen()
         {
             // Data buffer for incoming data.
             byte[] bytes = new Byte[1024];

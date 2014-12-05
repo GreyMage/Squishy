@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Squishy
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //SquishyServer server = new SquishyServer();
+            //server.startListen();
+
+            ByteQueue bq = new ByteQueue();
+            bq.Enqueue(1);
+            bq.Enqueue(2);
+            bq.Enqueue(3);
+            bq.Enqueue(1);
+            bq.Enqueue(2);
+            while (bq.Count > 0)
+            {
+                Console.WriteLine(bq.Dequeue());
+            }
+            Console.WriteLine("Cock");
+            bq.Enqueue(3);
+            bq.Enqueue(1);
+            bq.Enqueue(2);
+            bq.Enqueue(3);
+            while (bq.Count > 0)
+            {
+                Console.WriteLine(bq.Dequeue());
+            }
+            Console.WriteLine(bq.Dequeue());
+
+
+            Console.WriteLine("\nPress ENTER to continue...");
+            Console.Read();
+        }
+    }
+}
